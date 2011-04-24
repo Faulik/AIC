@@ -22,7 +22,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 void __fastcall TForm1::ICMPReply(TComponent *ASender,
       const TReplyStatus &AReplyStatus)
 {
-     AnsiString sTime, result;
+AnsiString sTime, result;
      if(AReplyStatus.MsRoundTripTime == 0)
         {sTime = "<1";}
         else
@@ -84,6 +84,8 @@ void __fastcall TForm1::Timer2Timer(TObject *Sender)
 XMLDocument1->LoadFromFile("http://www.aionlegend.ru/xml/status.xml");
 XMLDocument1->Active = true;
 Label3->Caption="Online:"+XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("servers")]->ChildNodes->Nodes[WideString("game")]->GetAttribute(WideString("online"));
+Label4->Caption="Siel:"+XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("servers")]->ChildNodes->Nodes[WideString("game")]->GetAttribute(WideString("status"));
+Label5->Caption="Login:"+XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("login")]->GetAttribute(WideString("status"));
 XMLDocument1->Active = false;
 }
 //---------------------------------------------------------------------------
@@ -103,8 +105,6 @@ void __fastcall TForm1::Hide1Click(TObject *Sender)
 Form1->Hide();
 }
 //---------------------------------------------------------------------------
-
-
 void __fastcall TForm1::StayOnTop1Click(TObject *Sender)
 {
 StayOnTop1->Checked=!StayOnTop1->Checked;

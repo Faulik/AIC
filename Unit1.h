@@ -46,6 +46,9 @@ __published:	// IDE-managed Components
         TImage *Image1;
         TMenuItem *Close1;
         TMenuItem *Hide1;
+        TLabel *Label4;
+        TPanel *Panel1;
+        TLabel *Label5;
         void __fastcall ICMPReply(TComponent *ASender,
           const TReplyStatus &AReplyStatus);
         void __fastcall Timer1Timer(TObject *Sender);

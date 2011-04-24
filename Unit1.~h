@@ -46,7 +46,9 @@ __published:	// IDE-managed Components
         TImage *Image1;
         TMenuItem *Close1;
         TMenuItem *Hide1;
-        TStatusBar *StatusBar1;
+        TLabel *Label4;
+        TPanel *Panel1;
+        TLabel *Label5;
         void __fastcall ICMPReply(TComponent *ASender,
           const TReplyStatus &AReplyStatus);
         void __fastcall Timer1Timer(TObject *Sender);
@@ -58,6 +60,7 @@ __published:	// IDE-managed Components
         void __fastcall TrayIcon1Click(TObject *Sender);
         void __fastcall Close1Click(TObject *Sender);
         void __fastcall Hide1Click(TObject *Sender);
+        void __fastcall StayOnTop1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 double MaxPing;

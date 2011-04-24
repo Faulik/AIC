@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 1164
-  Top = 259
+  Left = 1200
+  Top = 282
   AlphaBlend = True
   BorderStyle = bsNone
   Caption = 'AIC'
@@ -312,7 +312,7 @@ object Form1: TForm1
   end
   object Label1: TLabel
     Left = 48
-    Top = 80
+    Top = 115
     Width = 27
     Height = 13
     Caption = '         '
@@ -339,10 +339,10 @@ object Form1: TForm1
     Transparent = True
   end
   object Label3: TLabel
-    Left = 54
-    Top = 48
-    Width = 26
-    Height = 17
+    Left = 46
+    Top = 76
+    Width = 3
+    Height = 13
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -7
@@ -354,7 +354,7 @@ object Form1: TForm1
     Left = 0
     Top = 140
     Width = 130
-    Height = 60
+    Height = 70
     AllowPanning = pmNone
     AllowZoom = False
     AnimatedZoomSteps = 7
@@ -449,17 +449,29 @@ object Form1: TForm1
       YValues.Order = loNone
     end
   end
-  object StatusBar1: TStatusBar
+  object Panel1: TPanel
     Left = 0
-    Top = 200
-    Width = 130
-    Height = 10
+    Top = 0
+    Width = 65
+    Height = 41
+    BevelOuter = bvSpace
     Color = clMedGray
-    Panels = <
-      item
-        Width = 50
-      end>
-    SimplePanel = True
+    TabOrder = 1
+    object Label4: TLabel
+      Left = 5
+      Top = 20
+      Width = 32
+      Height = 13
+      Caption = 'Label4'
+      Transparent = True
+    end
+    object Label5: TLabel
+      Left = 5
+      Top = 2
+      Width = 32
+      Height = 13
+      Caption = 'Label5'
+    end
   end
   object ICMP: TIdIcmpClient
     BufferSize = 32
@@ -497,6 +509,7 @@ object Form1: TForm1
       Caption = 'Stay On Top'
       Checked = True
       RadioItem = True
+      OnClick = StayOnTop1Click
     end
     object TMenuItem
     end
