@@ -37,8 +37,8 @@ MaxPing=0;
 for(int i=0;i<50;i++){
         if(MasPing[i]>MaxPing)MaxPing=MasPing[i];
 }
-Series1->AddY(result.ToDouble());
 Application->ProcessMessages();
+Series1->AddY(result.ToDouble());
 }
 //---------------------------------------------------------------------------
 
