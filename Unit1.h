@@ -41,13 +41,17 @@ __published:	// IDE-managed Components
         TLabel *Label3;
         TTrayIcon *TrayIcon1;
         TPopupMenu *PopupMenu1;
-        TMenuItem *StayOnTop1;
         TXMLDocument *XMLDocument1;
         TImage *Image1;
         TMenuItem *Close1;
         TMenuItem *Hide1;
         TLabel *Label4;
         TLabel *Label5;
+        TMenuItem *Litlebar1;
+        TMenuItem *Show1;
+        TMenuItem *Close2;
+        TMenuItem *StayOnTop2;
+        TMenuItem *Show2;
         void __fastcall ICMPReply(TComponent *ASender,
           const TReplyStatus &AReplyStatus);
         void __fastcall Timer1Timer(TObject *Sender);
@@ -59,7 +63,12 @@ __published:	// IDE-managed Components
         void __fastcall TrayIcon1Click(TObject *Sender);
         void __fastcall Close1Click(TObject *Sender);
         void __fastcall Hide1Click(TObject *Sender);
-        void __fastcall StayOnTop1Click(TObject *Sender);
+        void __fastcall Image1MouseDown(TObject *Sender,
+          TMouseButton Button, TShiftState Shift, int X, int Y);
+        void __fastcall StayOnTop2Click(TObject *Sender);
+        void __fastcall Show1Click(TObject *Sender);
+        void __fastcall Close2Click(TObject *Sender);
+        void __fastcall Show2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 double MaxPing;

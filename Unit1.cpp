@@ -2,12 +2,12 @@
 
 #include <vcl.h>
 #include <math.h>
-#include <urlmon.h>
 #include <iostream>
 #include <string>
 #pragma hdrstop
 
 #include "Unit1.h"
+#include "Unit2.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "trayicon"
@@ -52,6 +52,8 @@ Application->ProcessMessages();
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 Form1->Left=GetSystemMetrics(SM_CXSCREEN)-Form1->Width;
+ICMP->Ping();
+Timer2->OnTimer;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Chart1BeforeDrawAxes(TObject *Sender)
@@ -74,7 +76,9 @@ Chart1->BottomAxis->Maximum++;
 void __fastcall TForm1::FormMouseDown(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
-Perform(WM_NCLBUTTONDOWN,HTCAPTION,NULL);
+ReleaseCapture();
+SendMessage(Form1->Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+
 }
 //---------------------------------------------------------------------------
 
@@ -84,6 +88,10 @@ void __fastcall TForm1::Timer2Timer(TObject *Sender)
 XMLDocument1->LoadFromFile("http://www.aionlegend.ru/xml/status.xml");
 XMLDocument1->Active = true;
 Label3->Caption="Online:"+XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("servers")]->ChildNodes->Nodes[WideString("game")]->GetAttribute(WideString("online"));
+Form2->Label1->Caption="Online:"+XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("servers")]->ChildNodes->Nodes[WideString("game")]->GetAttribute(WideString("online"));
+if((String)XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("servers")]->ChildNodes->Nodes[WideString("game")]->GetAttribute(WideString("status"))=="of")
+Form2->Color=clRed;
+else Form2->Color=clLime;
 Label4->Caption="Siel:"+XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("servers")]->ChildNodes->Nodes[WideString("game")]->GetAttribute(WideString("status"));
 Label5->Caption="Login:"+XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("login")]->GetAttribute(WideString("status"));
 XMLDocument1->Active = false;
@@ -96,7 +104,7 @@ Form1->Show();
 //--------------------------------------------------------------------------
 void __fastcall TForm1::Close1Click(TObject *Sender)
 {
- Form1->Close();
+ Form2->Close();
 }
 //---------------------------------------------------------------------------
 
@@ -105,12 +113,42 @@ void __fastcall TForm1::Hide1Click(TObject *Sender)
 Form1->Hide();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::StayOnTop1Click(TObject *Sender)
+void __fastcall TForm1::Image1MouseDown(TObject *Sender,
+      TMouseButton Button, TShiftState Shift, int X, int Y)
 {
-StayOnTop1->Checked=!StayOnTop1->Checked;
-if(StayOnTop1->Checked==true)
-Form1->FormStyle=fsStayOnTop;
-else Form1->FormStyle=fsNormal;
+ReleaseCapture();
+SendMessage(Form1->Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);        
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::StayOnTop2Click(TObject *Sender)
+{
+StayOnTop2->Checked=!StayOnTop2->Checked;
+if(StayOnTop2->Checked==true)
+Form2->FormStyle=fsStayOnTop;
+else Form2->FormStyle=fsNormal;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Show1Click(TObject *Sender)
+{
+Litlebar1->Checked=!Litlebar1->Checked;
+if(Litlebar1->Checked==true)
+Form2->Show();
+else Form2->Hide();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Close2Click(TObject *Sender)
+{
+Form2->Hide();
+Litlebar1->Checked=false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Show2Click(TObject *Sender)
+{
+Form1->Show();
 }
 //---------------------------------------------------------------------------
 
