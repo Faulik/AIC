@@ -7,6 +7,7 @@
 #include <Controls.hpp>
 #include <StdCtrls.hpp>
 #include <Forms.hpp>
+#include <IniFiles.hpp>
 //---------------------------------------------------------------------------
 class TForm2 : public TForm
 {

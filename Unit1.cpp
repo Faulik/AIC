@@ -89,7 +89,7 @@ XMLDocument1->LoadFromFile("http://www.aionlegend.ru/xml/status.xml");
 XMLDocument1->Active = true;
 Label3->Caption="Online:"+XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("servers")]->ChildNodes->Nodes[WideString("game")]->GetAttribute(WideString("online"));
 Form2->Label1->Caption="Online:"+XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("servers")]->ChildNodes->Nodes[WideString("game")]->GetAttribute(WideString("online"));
-if((String)XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("servers")]->ChildNodes->Nodes[WideString("game")]->GetAttribute(WideString("status"))=="of")
+if((String)XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("login")]->GetAttribute(WideString("status"))!="on" || (int)XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("servers")]->ChildNodes->Nodes[WideString("game")]->GetAttribute(WideString("online"))==0 )
 Form2->Color=clRed;
 else Form2->Color=clLime;
 Label4->Caption="Siel:"+XMLDocument1->DocumentElement->ChildNodes->Nodes[WideString("servers")]->ChildNodes->Nodes[WideString("game")]->GetAttribute(WideString("status"));
@@ -99,12 +99,12 @@ XMLDocument1->Active = false;
 //---------------------------------------------------------------------------
 void __fastcall TForm1::TrayIcon1Click(TObject *Sender)
 {
-Form1->Show();
+Form2->Show();
 }
 //--------------------------------------------------------------------------
 void __fastcall TForm1::Close1Click(TObject *Sender)
 {
- Form2->Close();
+Form2->Close();
 }
 //---------------------------------------------------------------------------
 

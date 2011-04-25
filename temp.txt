@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?><response><login name="aionlegend" status="on" /><servers><game id="0" name="Siel" status="on" online="3840" /></servers><total online="3840" /></response>
