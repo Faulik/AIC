@@ -18,7 +18,6 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  FormStyle = fsStayOnTop
   KeyPreview = True
   OldCreateOrder = False
   PopupMenu = PopupMenu1
@@ -309,6 +308,7 @@ object Form1: TForm1
       180300600C0180300600C0180300600C0180300600C0180300600C0180300600
       C0180300600C0180300600C0180300600C0180300600C0180300600C01803006
       00C0180300600C0180300600C0180FFFD9}
+    OnMouseDown = Image1MouseDown
   end
   object Label1: TLabel
     Left = 48
@@ -353,11 +353,10 @@ object Form1: TForm1
   object Label5: TLabel
     Left = 5
     Top = 2
-    Width = 32
+    Width = 3
     Height = 13
-    Caption = 'Label5'
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlue
+    Font.Color = clWhite
     Font.Height = -11
     Font.Name = 'MS Sans Serif'
     Font.Style = []
@@ -367,11 +366,10 @@ object Form1: TForm1
   object Label4: TLabel
     Left = 5
     Top = 20
-    Width = 32
+    Width = 3
     Height = 13
-    Caption = 'Label4'
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlue
+    Font.Color = clWhite
     Font.Height = -11
     Font.Name = 'MS Sans Serif'
     Font.Style = []
@@ -499,6 +497,7 @@ object Form1: TForm1
   end
   object TrayIcon1: TTrayIcon
     Visible = True
+    PopupMenu = PopupMenu1
     Hide = True
     RestoreOn = imLeftDoubleClick
     PopupMenuOn = imNone
@@ -509,21 +508,33 @@ object Form1: TForm1
   object PopupMenu1: TPopupMenu
     Left = 72
     Top = 8
-    object StayOnTop1: TMenuItem
-      Caption = 'Stay On Top'
-      Checked = True
-      RadioItem = True
-      OnClick = StayOnTop1Click
+    object Litlebar1: TMenuItem
+      Caption = 'Litle bar'
+      object StayOnTop2: TMenuItem
+        Caption = 'Stay On Top'
+        Checked = True
+        OnClick = StayOnTop2Click
+      end
+      object Show1: TMenuItem
+        Caption = 'Show'
+        OnClick = Show1Click
+      end
+      object Close2: TMenuItem
+        Caption = 'Hide'
+        OnClick = Close2Click
+      end
     end
-    object TMenuItem
-    end
-    object Close1: TMenuItem
-      Caption = 'Close'
-      OnClick = Close1Click
+    object Show2: TMenuItem
+      Caption = 'Show'
+      OnClick = Show2Click
     end
     object Hide1: TMenuItem
       Caption = 'Hide'
       OnClick = Hide1Click
+    end
+    object Close1: TMenuItem
+      Caption = 'Close'
+      OnClick = Close1Click
     end
   end
   object XMLDocument1: TXMLDocument

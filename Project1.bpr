@@ -4,13 +4,13 @@
   <MACROS>
     <VERSION value="BCB.06.00"/>
     <PROJECT value="Project1.exe"/>
-    <OBJFILES value="Project1.obj Unit1.obj"/>
+    <OBJFILES value="Project1.obj Unit1.obj Unit2.obj"/>
     <RESFILES value="Project1.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
     <DEFFILE value=""/>
-    <RESDEPEN value="$(RESFILES) Unit1.dfm"/>
-    <LIBFILES value="&quot;C:\Program Files\Borland\CBuilder6\Lib\Psdk\urlmon.lib&quot;"/>
+    <RESDEPEN value="$(RESFILES) Unit1.dfm Unit2.dfm"/>
+    <LIBFILES value=""/>
     <LIBRARIES value="vclx.lib bcbsmp.lib inet.lib xmlrtl.lib tee.lib indy.lib rtl.lib vcl.lib"/>
     <SPARELIBS value="vcl.lib rtl.lib indy.lib tee.lib xmlrtl.lib inet.lib bcbsmp.lib vclx.lib"/>
     <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
@@ -57,7 +57,7 @@
       <FILE FILENAME="Project1.res" FORMNAME="" UNITNAME="Project1.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Project1.cpp" FORMNAME="" UNITNAME="Project1" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Unit1.cpp" FORMNAME="Form1" UNITNAME="Unit1" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="C:\Program Files\Borland\CBuilder6\Lib\Psdk\urlmon.lib" FORMNAME="" UNITNAME="urlmon.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Unit2.cpp" FORMNAME="Form2" UNITNAME="Unit2" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -65,11 +65,11 @@
   <IDEOPTIONS>
 [Version Info]
 IncludeVerInfo=1
-AutoIncBuild=0
-MajorVer=1
+AutoIncBuild=1
+MajorVer=0
 MinorVer=0
 Release=0
-Build=0
+Build=2
 Debug=0
 PreRelease=0
 Special=0
@@ -81,7 +81,7 @@ CodePage=1251
 [Version Info Keys]
 CompanyName=Faul inc.
 FileDescription=
-FileVersion=1.0.0.0
+FileVersion=0.0.0.2
 InternalName=Try1
 LegalCopyright=
 LegalTrademarks=
