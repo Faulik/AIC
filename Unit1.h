@@ -47,7 +47,6 @@ __published:	// IDE-managed Components
         TMenuItem *Close1;
         TMenuItem *Hide1;
         TLabel *Label4;
-        TPanel *Panel1;
         TLabel *Label5;
         void __fastcall ICMPReply(TComponent *ASender,
           const TReplyStatus &AReplyStatus);

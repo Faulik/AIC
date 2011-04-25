@@ -350,6 +350,34 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
   end
+  object Label5: TLabel
+    Left = 5
+    Top = 2
+    Width = 32
+    Height = 13
+    Caption = 'Label5'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Transparent = True
+  end
+  object Label4: TLabel
+    Left = 5
+    Top = 20
+    Width = 32
+    Height = 13
+    Caption = 'Label4'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Transparent = True
+  end
   object Chart1: TChart
     Left = 0
     Top = 140
@@ -447,30 +475,6 @@ object Form1: TForm1
       YValues.Name = 'Y'
       YValues.Multiplier = 1
       YValues.Order = loNone
-    end
-  end
-  object Panel1: TPanel
-    Left = 0
-    Top = 0
-    Width = 65
-    Height = 41
-    BevelOuter = bvSpace
-    Color = clMedGray
-    TabOrder = 1
-    object Label4: TLabel
-      Left = 5
-      Top = 20
-      Width = 32
-      Height = 13
-      Caption = 'Label4'
-      Transparent = True
-    end
-    object Label5: TLabel
-      Left = 5
-      Top = 2
-      Width = 32
-      Height = 13
-      Caption = 'Label5'
     end
   end
   object ICMP: TIdIcmpClient
